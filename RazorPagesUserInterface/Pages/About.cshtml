@@ -1,0 +1,10 @@
+﻿@page
+
+@* Подключаем пространство имен класса Person *@
+@using RazorPagesUserInterface.Pages
+@{
+    Person tom = new Person("Tom", 37);
+}
+<h2>Person Data</h2>
+<p>Name: <b>@tom.Name</b></p>
+<p>Age: <b>@tom.Age</b></p>

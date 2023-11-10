@@ -1,0 +1,20 @@
+﻿@page "{handler?}"
+@model RazorPagesUserInterface.Pages.Forms1Index
+
+
+<h2>Lista Utilizatori</h2>
+<form method="POST" asp-antiforgery="true">
+    <input type="number" name="age" />
+    <input type="submit" asp-page-handler="GreaterThan" value="Mai Mult" />
+    <input type="submit" asp-page-handler="LessThan" value="Mai Putin" />
+</form>
+<table class="table">
+    <tr><th>Name</th><th>Age</th></tr>
+    @foreach (Persoana person in Model.PersoaneAfisate)
+    {
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Age</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,22 @@
+﻿@page
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model RazorPagesUserInterface.Pages.SelectTagIndexModel
+
+<h2>@Model.message</h2>
+<form method="post" asp-antiforgery="true">
+    <p>
+        <label asp-for="Produs.Name">Denumire</label><br />
+        <input type="text" asp-for="Produs.Name" />
+    </p>
+    <p>
+        <label asp-for="Produs.Price">Pret</label><br />
+        <input asp-for="Produs.Price" />
+    </p>
+    <p>
+        <label asp-for="Produs.CompanyId">Producator</label><br />
+        <select asp-for="Produs.CompanyId" asp-items="Model.Companies"></select>
+        <option selected="selected" disabled="disabled">Выберите компанию</option>
+
+    </p>
+    <input type="submit" value="Trimite" />
+</form>
